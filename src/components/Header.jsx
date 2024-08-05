@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import ytLogo from "../images/yt-logo.png";
-import ytLogoMobile from "../images/yt-logo-mobile.png";
+import ALogo from "../images/A-logo.png"
 
 import { SlMenu } from "react-icons/sl";
 import { IoIosSearch } from "react-icons/io";
@@ -56,13 +55,14 @@ const Header = () => {
                 )}
                 <Link to="/YoutubeClone-Arsyha/" className="flex h-5 items-center">
                     <img
-                        className="h-full hidden md:block"
-                        src={ytLogo}
+                        className="h-[10vh] hidden md:block"
+                        src={ALogo}
                         alt="Youtube"
                     />
+                    <p className="hidden md:block text-white font-bold">ArsyhaTube</p>
                     <img
-                        className="h-full md:hidden"
-                        src={ytLogoMobile}
+                        className="h-[6vh] md:hidden"
+                        src={ALogo}
                         alt="Youtube"
                     />
                 </Link>
