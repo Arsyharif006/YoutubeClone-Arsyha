@@ -14,7 +14,7 @@ const LeftNav = () => {
             case "home":
                 setSelectedCategory(name);
                 if (mobileMenu) setMobileMenu(false);  // Close the mobile menu when an item is clicked
-                navigate("/");
+                navigate("/YoutubeClone-Arsyha");
                 break;
             case "menu":
                 return false;

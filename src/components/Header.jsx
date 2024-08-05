@@ -35,7 +35,7 @@ const Header = () => {
     };
 
     const { pathname } = useLocation();
-    const pageName = pathname?.split("/")?.filter(Boolean)?.[0];
+    const pageName = pathname?.split("/YoutubeClone-Arsyha")?.filter(Boolean)?.[0];
 
     return (
         <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-black">
@@ -54,7 +54,7 @@ const Header = () => {
                         )}
                     </div>
                 )}
-                <Link to="/" className="flex h-5 items-center">
+                <Link to="/YoutubeClone-Arsyha" className="flex h-5 items-center">
                     <img
                         className="h-full hidden md:block"
                         src={ytLogo}
