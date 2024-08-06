@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Feed from "./components/Feed";
 import SearchResult from "./components/SearchResult";
 import VideoDetails from "./components/VideoDetails";
+import ChannelDetails from './components/ChannelDetails'
 import { AppContext } from "./context/contextApi";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
                             element={<SearchResult />}
                         />
                         <Route path="/video/:id" element={<VideoDetails />} />
+                        <Route path="/channel/:channelId" element={<ChannelDetails />} /> 
                     </Routes>
                 </div>
             </BrowserRouter>

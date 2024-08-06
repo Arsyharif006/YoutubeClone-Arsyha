@@ -20,12 +20,14 @@ const VideoCard = ({ video }) => {
                 </div>
                 <div className="flex text-white mt-3">
                     <div className="flex items-start">
-                        <div className="flex h-9 w-9 rounded-full overflow-hidden">
-                            <img
-                                className="h-full w-full object-cover"
-                                src={video?.author?.avatar[0]?.url}
-                            />
-                        </div>
+                        <Link to={`/channel/${video?.author?.channelId}`}>
+                            <div className="flex h-9 w-9 rounded-full overflow-hidden">
+                                <img
+                                    className="h-full w-full object-cover"
+                                    src={video?.author?.avatar[0]?.url}
+                                />
+                            </div>
+                        </Link>
                     </div>
                     <div className="flex flex-col ml-3 overflow-hidden">
                         <span className="text-sm font-bold line-clamp-2">
