@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/YoutubeClone-Arsyha/static/css/main.c5ed341a.css",
-    "main.js": "/YoutubeClone-Arsyha/static/js/main.6a39a490.js",
+    "main.css": "/YoutubeClone-Arsyha/static/css/main.d32e9c79.css",
+    "main.js": "/YoutubeClone-Arsyha/static/js/main.d5eff779.js",
     "reactPlayerPreview.js": "/YoutubeClone-Arsyha/static/js/reactPlayerPreview.2f1d22cf.chunk.js",
     "static/media/me.png": "/YoutubeClone-Arsyha/static/media/me.3e2c6708e7000c71e2a0.png",
     "static/media/A-logo.png": "/YoutubeClone-Arsyha/static/media/A-logo.3e682bbb68795324f825.png",
     "index.html": "/YoutubeClone-Arsyha/index.html",
-    "main.c5ed341a.css.map": "/YoutubeClone-Arsyha/static/css/main.c5ed341a.css.map",
-    "main.6a39a490.js.map": "/YoutubeClone-Arsyha/static/js/main.6a39a490.js.map",
+    "main.d32e9c79.css.map": "/YoutubeClone-Arsyha/static/css/main.d32e9c79.css.map",
+    "main.d5eff779.js.map": "/YoutubeClone-Arsyha/static/js/main.d5eff779.js.map",
     "reactPlayerPreview.2f1d22cf.chunk.js.map": "/YoutubeClone-Arsyha/static/js/reactPlayerPreview.2f1d22cf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5ed341a.css",
-    "static/js/main.6a39a490.js"
+    "static/css/main.d32e9c79.css",
+    "static/js/main.d5eff779.js"
   ]
 }
