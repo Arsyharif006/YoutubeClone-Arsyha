@@ -13,17 +13,25 @@ const CommentVideo = ({ comment }) => {
       </div>
       <div>
         <div className="flex items-center space-x-2">
-          <span className="text-white font-semibold">{comment?.author?.title}</span>
-          <span className="text-gray-400 text-sm">{comment?.publishedTimeText}</span>
+          <span className="text-white font-semibold text-sm sm:text-base">
+            {comment?.author?.title}
+          </span>
+          <span className="text-gray-400 text-xs sm:text-sm">
+            {comment?.publishedTimeText}
+          </span>
         </div>
-        <p className="text-white mt-1">{comment?.content}</p>
+        <p className="text-white mt-1 text-sm sm:text-base">
+          {comment?.content}
+        </p>
         <div className="flex items-center space-x-3 mt-2">
-          <div className="flex items-center space-x-1 text-gray-400">
+          <div className="flex items-center space-x-1 text-gray-400 text-sm sm:text-base">
             <AiOutlineLike />
             <span>{comment?.stats?.votes}</span>
           </div>
           {comment?.stats?.replies > 0 && (
-            <div className="text-gray-400">{comment?.stats?.replies} replies</div>
+            <div className="text-gray-400 text-sm sm:text-base">
+              {comment?.stats?.replies} replies
+            </div>
           )}
         </div>
       </div>
