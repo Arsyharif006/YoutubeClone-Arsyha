@@ -25,7 +25,6 @@ const VideoDetails = () => {
   const fetchVideoDetails = () => {
     setLoading(true);
     fetchDataFromApi(`video/details/?id=${id}`).then((res) => {
-      console.log(res);
       setVideo(res);
       setLoading(false);
     });
@@ -34,7 +33,6 @@ const VideoDetails = () => {
   const fetchRelatedVideos = () => {
     setLoading(true);
     fetchDataFromApi(`video/related-contents/?id=${id}`).then((res) => {
-      console.log(res);
       setRelatedVideos(res);
       setLoading(false);
     });
@@ -42,8 +40,8 @@ const VideoDetails = () => {
 
   return (
     <div className="flex flex-col lg:flex-row justify-center h-[calc(100%-56px)] bg-black">
-      <div className="w-full lg:w-[calc(100%-350px)] xl:w-[calc(100%-400px)] px-4 py-3 lg:py-6 overflow-y-auto ">
-        <div className="w-full h-[25vh] md:h-[70vh]" >
+      <div className="w-full lg:w-[calc(100%-350px)] xl:w-[calc(100%-400px)] px-4 py-3 lg:py-6 overflow-y-auto">
+        <div className="w-full h-[25vh] md:h-[70vh]">
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${id}`}
             controls
@@ -61,18 +59,22 @@ const VideoDetails = () => {
             <div className="flex items-start">
               <div className="flex h-11 w-11 rounded-full overflow-hidden">
                 <Link to={`/channel/${video?.author?.channelId}`}>
-                  <img
-                    className="h-full w-full object-cover"
-                    src={video?.author?.avatar[0]?.url}
-                    alt={video?.author?.title}
-                  />
+                  {video?.author?.avatar?.[0]?.url ? (
+                    <img
+                      className="h-full w-full object-cover"
+                      src={video?.author?.avatar[0]?.url}
+                      alt={video?.author?.title}
+                    />
+                  ) : (
+                    <div className="h-full w-full bg-gray-500"></div> // fallback if no avatar
+                  )}
                 </Link>
               </div>
             </div>
             <div className="flex flex-col ml-3">
               <div className="text-white text-md font-semibold flex items-center">
                 {video?.author?.title}
-                {video?.author?.badges[0]?.type === "VERIFIED_CHANNEL" && (
+                {video?.author?.badges?.[0]?.type === "VERIFIED_CHANNEL" && (
                   <BsFillCheckCircleFill className="text-white/[0.5] text-[12px] ml-1" />
                 )}
               </div>
@@ -95,18 +97,14 @@ const VideoDetails = () => {
         <div className="lg:hidden flex flex-col py-6 px-4">
           {relatedVideos?.contents?.map((item, index) => {
             if (item?.type !== "video") return false;
-            return (
-              <SuggestionVideoCard key={index} video={item?.video} />
-            );
+            return <SuggestionVideoCard key={index} video={item?.video} />;
           })}
         </div>
       </div>
       <div className="hidden lg:flex flex-col py-6 px-4 overflow-y-auto lg:w-[350px] xl:w-[400px]">
         {relatedVideos?.contents?.map((item, index) => {
           if (item?.type !== "video") return false;
-          return (
-            <SuggestionVideoCard key={index} video={item?.video} />
-          );
+          return <SuggestionVideoCard key={index} video={item?.video} />;
         })}
       </div>
     </div>
