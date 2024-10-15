@@ -30,6 +30,7 @@ const VideoDetails = () => {
     });
   };
 
+  
   const fetchRelatedVideos = () => {
     setLoading(true);
     fetchDataFromApi(`video/related-contents/?id=${id}`).then((res) => {
